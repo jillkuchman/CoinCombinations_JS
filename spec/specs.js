@@ -15,4 +15,11 @@ describe('CoinCombinations', function() {
         expect(CoinCombinations(.07)).to.equal("2p1n");
     });
 
+    it("returns a dime when the input value can be made from a dime", function() {
+        expect(CoinCombinations(.10)).to.equal("1d");
+    });
+
+    it("returns one dime and 1 penny when the input is 11 cents", function() {
+        expect(CoinCombinations(.11)).to.equal("1p1d");
+    });
 });
