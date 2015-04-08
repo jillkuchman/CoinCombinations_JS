@@ -8,21 +8,21 @@ var CoinCombinations = function(input_value) {
     var nickel_count = 0;
 
     if ((amount_left % 5) !== 0) {
-        penny_count = (amount_left % 5);
+        penny_count = Math.floor(amount_left % 5);
     }
 
     if (penny_count !== 0){
-        output += penny_count + " p";
+        output += penny_count + "p";
     }
 
-    amount_left = amount_left - penny_count;
+    amount_left = Math.floor(amount_left - penny_count);
 
     if (amount_left % 5 === 0) {
         nickel_count = amount_left / 5;
     }
 
     if (nickel_count !== 0) {
-        output += nickel_count + " n";
+        output += nickel_count + "n";
     }
 
 
