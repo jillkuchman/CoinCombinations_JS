@@ -26,4 +26,12 @@ describe('CoinCombinations', function() {
     it("returns a count of dimes, nickels, and pennies when the input can be made from dimes, nickels, and pennies", function() {
         expect(CoinCombinations(.17)).to.eql([2, 1, 1, 0]);
     });
+
+    it("returns a quarter for an input value of 25 cents", function() {
+        expect(CoinCombinations(.25)).to.eql([0, 0, 0, 1]);
+    });
+
+    it("returns multiple coins for an input value that requires multiple coins", function() {
+        expect(CoinCombinations(.42)).to.eql([2, 1, 1, 1]);
+    });
 });
