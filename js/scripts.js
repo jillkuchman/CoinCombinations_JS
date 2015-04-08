@@ -23,3 +23,24 @@ var CoinCombinations = function(input_value) {
 
     return output;
 }
+
+$(document).ready(function() {
+    $("form#input_value").submit(function(event) {
+
+        var user_money =  parseFloat($("input#total_money").val());
+        var results_array = CoinCombinations(user_money);
+
+        var penny_count = results_array[0];
+        var nickel_count = results_array[1];
+        var dime_count = results_array[2];
+        var quarter_count = results_array[3];
+
+        $("#pennies").text(penny_count + " penn(ies)");
+        $("#nickels").text(nickel_count + " nickel(s)");
+        $("#dimes").text(dime_count + " dime(s)");
+        $("#quarters").text(quarter_count + " quarter(s)");
+
+        $("#result").show();
+        event.preventDefault();
+    });
+});
